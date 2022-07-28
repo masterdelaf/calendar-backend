@@ -1,11 +1,15 @@
-// import express from "express";
-// import dotenv from "dotenv"
 const express = require("express")
-const dotenv = require("dotenv")
+require("dotenv").config()
+const cors = require('cors')
+const { dbConnection } = require('./database/config')
 
 const app = express()
 
-dotenv.config()
+// Base de datos
+dbConnection()
+
+// CORS
+app.use(cors())
 
 // Directorio Publico
 app.use( express.static('public') )
