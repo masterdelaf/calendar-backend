@@ -10,7 +10,7 @@ const getEventos = ( req, res = response ) => {
 
 const crearEvento = ( req, res = response ) => {
 
-    res.status(201).json({
+    res.json({
         ok: true, 
         msg: 'CrearEventos'
     })
