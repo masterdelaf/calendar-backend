@@ -21,6 +21,11 @@ app.use( express.json() )
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/events', require('./routes/events'))
 
+// Ruta para cuando no coincide con ninguna de las anteriores
+app.get('*', (req, res) => {
+    res.sendFile( __dirname + '/public/index.html')
+})
+
 
 const PORT = process.env.PORT || 4000
 // Escuchar peticiones
